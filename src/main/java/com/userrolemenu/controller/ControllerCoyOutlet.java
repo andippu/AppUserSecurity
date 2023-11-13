@@ -1,5 +1,6 @@
 package com.userrolemenu.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import com.userrolemenu.service.ServiceUsers;
 
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 public class ControllerCoyOutlet {
 	
 	@Autowired

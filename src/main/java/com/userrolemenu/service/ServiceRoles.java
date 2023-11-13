@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.userrolemenu.model.ApplRoles;
+import com.userrolemenu.model.ApplUserRoles;
 import com.userrolemenu.repository.IApplRolesRepository;
 
 
@@ -17,9 +18,11 @@ public class ServiceRoles {
 	@Autowired
 	IApplRolesRepository repoRoles;
 
-	public Optional<ApplRoles> getRoleName(Integer roleId) {
-		return repoRoles.findById(roleId);
+	public String getRoleName(Integer roleId) {
+		return repoRoles.getRoleNames(roleId);
 	}
+	
+	
 
 
 }

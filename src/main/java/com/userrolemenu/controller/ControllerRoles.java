@@ -1,5 +1,6 @@
 package com.userrolemenu.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 import java.util.Optional;
@@ -13,13 +14,14 @@ import com.userrolemenu.service.ServiceRoles;
 
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 public class ControllerRoles {
 	
 	@Autowired
 	ServiceRoles serviceRoles;
 	
 	@GetMapping("/role/getrolename")
-	public Optional<ApplRoles>  getRoleName(Integer roleId) {
+	public String getRoleName(Integer roleId) {
 		return serviceRoles.getRoleName(roleId);
 	}
 
